@@ -1,0 +1,244 @@
+/* ===== عام لكل الصفحات ===== */
+body {
+    font-family: 'Cairo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom right, #ffeef2, #935197);
+    color: #7311b5; /* كل النصوص باللون الأبيض */
+    text-align: center;
+    overflow-x: hidden;
+}
+button { cursor: pointer; transition: 0.3s; font-weight: bold; border: none; }
+
+/* ===== Login ===== */
+.login-container {
+    margin-top: 50px;
+    background:#ca92dbc9;
+    padding:40px;
+    border-radius:25px;
+    width:90%;
+    max-width:400px;
+    margin-inline:auto;
+    box-shadow:0 10px 25px rgba(252, 248, 248, 0.15);
+    position:relative;
+}
+
+.animated-title { font-size:28px; color:#9c42cc; animation:pulse 1.5s infinite; }
+.icons-under-password {
+    position: relative;
+    height: 40px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.icons-under-password span {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    animation: floatUp 3s infinite ease-in-out;
+    opacity: 0;
+}
+
+/* اختلاف التوقيت والمكان */
+.icons-under-password span:nth-child(1) {
+    left: 20%;
+    animation-delay: 0s;
+}
+.icons-under-password span:nth-child(2) {
+    left: 40%;
+    animation-delay: 1s;
+}
+.icons-under-password span:nth-child(3) {
+    left: 60%;
+    animation-delay: 2s;
+}
+.icons-under-password span:nth-child(4) {
+    left: 80%;
+    animation-delay: 1.5s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    30% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+}
+
+.gift { font-size:80px; animation:jump 1s infinite alternate; display:inline-block; margin:20px;}
+.heart-large { position:absolute; top:50px; right:50px; font-size:80px; animation:float-heart 2s infinite alternate; opacity:0.7; }
+.login-container input { width:85%; padding:12px; margin:10px 0; border-radius:15px; border:1px solid #795999; font-size:16px; color:#333;}
+.login-container button { background:#f1adf8; color:rgb(44, 18, 82); padding:12px 30px; border-radius:50px; font-size:18px;}
+.login-container button:hover { background:#960ea8; transform:scale(1.05); }
+
+/* ===== Heavy Message ===== */
+.heavy-container { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px; position:relative;}
+.heavy-frame { background:#c894f2; border-radius:25px; padding:25px; width:90%; max-width:650px; box-shadow:0 10px 20px rgb(62, 15, 158);}
+.heavy-text { font-size:24px; font-weight:bold; color:#440c74; line-height:3; text-align:center; }
+.heavy-container button {
+    background:#c894f2;
+    color:#440c74;
+    padding:12px 25px;
+    border-radius:50px;
+    font-size:18px;
+    margin-top:20px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.heavy-container button:hover {
+    background:#923dc3;
+    transform:scale(1.05);
+}
+
+/* ===== Music ===== */
+.music-container { margin:20px; display:flex; align-items:center; gap:15px; }
+.music-icon { font-size:50px; cursor:pointer; transition:0.3s; color:#bbbaba; }
+.music-icon.playing { animation:shake 0.5s infinite; }
+/* ===== Music Label ===== */
+.music-label {
+    font-size: 20px;
+    font-weight:bold;
+    color:#440c74;
+}
+
+/* ===== Floating hearts ===== */
+#hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: 0;
+    color: #cca4ee;
+    font-size: 20px;
+    opacity: 0.8;
+    animation: floatHeart 4s linear forwards;
+}
+
+@keyframes floatHeart {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+    }
+}
+
+
+/* ===== Memories ===== */
+.memories-container.scroll-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.memory-frame {
+    background: #c894f2;
+    border-radius: 25px;
+    padding: 15px;
+    width: 380px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+/* الصورة تاخد حجمها الطبيعي */
+.memory-frame img,
+.memory-frame video {
+    width: 100%;
+    height: auto;          /* مهم */
+    max-height: none;
+    object-fit: contain;   /* بدون قص */
+    border-radius: 20px;
+}
+
+.memory-title {
+    font-weight: bold;
+    margin-top: 8px;
+    color: #8535b1;
+}
+
+.final-frame button {
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 50px;
+    border: none;
+    background: #dbb1ef;
+    color: #fff;
+}
+
+.final-frame button:hover {
+    background: #a83fea;
+    transform: scale(1.05);
+}
+
+
+/* ===== Day Pages ===== */
+.day-container { display:flex; flex-direction:column; align-items:center; gap:15px; padding:20px; max-height:80vh; overflow-y:auto;}
+.day-container img { width:90%; max-width:450px; height:220px; object-fit:cover; border-radius:20px; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.day-container button { background:#9228ee; color:rgb(123, 27, 153); padding:12px 25px; border-radius:50px; font-size:18px; margin-top:15px;}
+.day-container button:hover { background:#d78bf3; transform:scale(1.05); }
+
+
+/* ===== Secret Message ===== */
+.secret-container { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:30px; position:relative;}
+
+.secret-frame { background:#dfa2f1; padding:20px; border-radius:25px; width:90%; max-width:650px; box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+.secret-text { font-size:26px; color:#8c38c5; font-weight:bold; opacity:0; transition:opacity 0.5s; margin:10px 0; }
+
+.secret-container button.back {
+    background:#7f43b0; /* لون بينك غامق */
+    color:rgb(255, 255, 255);
+    padding:12px 25px;
+    border-radius:50px;
+    font-size:18px;
+    border:none;
+    cursor:pointer;
+    margin-top:20px;
+    transition:0.3s;
+    font-weight:bold;
+}
+
+.secret-container button.back:hover {
+    background:#6f18a1;
+    transform:scale(1.05);
+}
+
+
+/* ===== Floating hearts & flowers ===== */
+@keyframes float-heart {0%{transform:translateY(0);}50%{transform:translateY(-30px);}100%{transform:translateY(0);}}
+@keyframes shake {0%{transform:rotate(0deg);}25%{transform:rotate(10deg);}50%{transform:rotate(-10deg);}75%{transform:rotate(10deg);}100%{transform:rotate(0deg);}}
+@keyframes pulse {0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+@keyframes jump {0%{transform:translateY(0);}50%{transform:translateY(-20px) rotate(-10deg);}100%{transform:translateY(0);}}
+@keyframes float-flower {
+  0%{transform:translateY(0) rotate(0deg); opacity:1;}
+  100%{transform:translateY(-100vh) rotate(360deg); opacity:0;}
+}
+.flower {
+    position:absolute;
+    font-size:26px;
+    color:#e33f91;
+    animation:float-flower 6s linear infinite;
+    pointer-events:none;
+}
